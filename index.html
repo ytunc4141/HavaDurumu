@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="weather-scene" class="scene"></div>
+  <header class="hero">
+    <div class="hero__content">
+      <div class="top-actions">
+        <button id="lang-toggle" type="button" class="pill-btn" aria-label="Switch language">EN</button>
+        <button id="theme-toggle" type="button" class="pill-btn" aria-label="Toggle theme">Dark</button>
+      </div>
+
+      <p class="eyebrow" data-i18n="eyebrow">Weather at a glance</p>
+      <h1 data-i18n="title"></h1>
+      <p class="lede" data-i18n="lede">Type any city to see today's conditions and a 7-day outlook.</p>
+
+      <form id="location-form" class="search">
+        <input type="text" id="location-input" data-i18n-placeholder="inputPlaceholder" placeholder="e.g., Istanbul, London, New York" required>
+        <button type="submit" data-i18n="buttonLabel">Get weather</button>
+      </form>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card" id="current-weather">
+      <div class="section-header">
+        <h2 data-i18n="currentTitle">Current weather</h2>
+        <span id="last-updated" class="muted"></span>
+      </div>
+
+      <div id="weather-slider" class="weather-slider"></div>
+
+      <div id="current-content">
+        <div class="content-placeholder" data-i18n="currentPlaceholder">Enter a location to see the latest weather.</div>
+      </div>
+    </section>
+
+    <section class="card" id="forecast">
+      <div class="section-header">
+        <h2 data-i18n="forecastTitle">7-day forecast</h2>
+      </div>
+      <div class="forecast-grid" id="forecast-grid">
+        <div class="content-placeholder" data-i18n="forecastPlaceholder">Forecast will appear here after you search.</div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
